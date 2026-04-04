@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dr-eberle",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/manuelstepp/Claude/dr-eberle-redesign", "-l", "3456"],
+      "port": 3456
+    }
+  ]
+}
