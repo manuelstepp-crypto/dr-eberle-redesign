@@ -183,25 +183,15 @@ img {
     line-height: 1.1;
 }
 
-.logo-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-    transition: color var(--transition);
+.logo-img {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter var(--transition);
 }
 
-.logo-tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-}
-
-.header.scrolled .logo-name {
-    color: var(--primary);
+.header.scrolled .logo-img {
+    filter: none;
 }
 
 .nav {
@@ -309,7 +299,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&h=900&fit=crop') center/cover no-repeat;
+    background: url('assets/slider-leather.gif') center/cover no-repeat;
     opacity: 0.15;
 }
 
@@ -507,6 +497,19 @@ img {
    ======================================== */
 .history {
     background: var(--bg-light);
+}
+
+.history-image-wrapper {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.history-image {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .timeline {
@@ -737,6 +740,20 @@ img {
 
 .services .section-description {
     color: rgba(255, 255, 255, 0.6);
+}
+
+.services-image-wrapper {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.services-hero-image {
+    max-width: 700px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .services-grid {
@@ -986,9 +1003,21 @@ img {
 }
 
 .person {
-    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
     font-size: 0.9rem;
     color: var(--text-light);
+}
+
+.person-photo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
 }
 
 .person strong {
@@ -1098,15 +1127,14 @@ img {
 }
 
 .footer-logo {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
     margin-bottom: 16px;
 }
 
-.footer-logo .logo-name {
-    color: #fff;
-    font-size: 1.3rem;
+.footer-logo-img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .footer-brand p {
