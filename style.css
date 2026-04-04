@@ -183,15 +183,25 @@ img {
     line-height: 1.1;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    transition: filter var(--transition);
+.logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    transition: color var(--transition);
 }
 
-.header.scrolled .logo-img {
-    filter: none;
+.logo-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.header.scrolled .logo-name {
+    color: var(--primary);
 }
 
 .nav {
