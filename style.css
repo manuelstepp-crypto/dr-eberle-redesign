@@ -1248,10 +1248,15 @@ img {
 }
 
 @media (max-width: 768px) {
-    .section {
-        padding: 70px 0;
+    .container {
+        padding: 0 20px;
     }
 
+    .section {
+        padding: 60px 0;
+    }
+
+    /* --- Mobile Nav --- */
     .nav, .nav-right {
         display: none;
     }
@@ -1260,24 +1265,37 @@ img {
         display: flex;
         flex-direction: column;
         position: fixed;
-        inset: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
         background: var(--primary);
-        z-index: 999;
+        z-index: 1000;
         justify-content: center;
         align-items: center;
-        gap: 8px;
+        gap: 4px;
         padding: 20px;
     }
 
     .nav.open .nav-link {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: rgba(255, 255, 255, 0.8);
-        padding: 12px 24px;
+        padding: 14px 24px;
+    }
+
+    .nav.open .nav-link:hover,
+    .nav.open .nav-link.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
     }
 
     .hamburger {
         display: flex;
-        z-index: 1001;
+        z-index: 1002;
+        position: relative;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -1292,55 +1310,276 @@ img {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    /* --- Mobile Hero --- */
+    .hero {
+        min-height: 100svh;
     }
 
+    .hero-content {
+        padding: 110px 20px 60px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-buttons .btn-outline {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 6px 16px;
+        margin-bottom: 24px;
+    }
+
+    /* --- Mobile Stats --- */
+    .stats-bar {
+        padding: 36px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* --- Mobile About --- */
     .about-grid,
     .innovation-grid,
     .quality-grid,
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
 
-    .about-image img,
-    .innovation-image img,
-    .quality-image img {
-        height: 350px;
+    .about-image img {
+        height: 280px;
+        width: 100%;
+    }
+
+    .about-image-badge {
+        bottom: -16px;
+        left: 16px;
+        padding: 14px 20px;
+    }
+
+    .badge-number {
+        font-size: 1.8rem;
+    }
+
+    .about-lead {
+        font-size: 1.05rem;
+    }
+
+    /* --- Mobile History --- */
+    .history-image-wrapper {
+        margin-top: 24px;
+    }
+
+    .history-image {
+        max-width: 100%;
+        border-radius: var(--radius);
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 20px;
+    }
+
+    .timeline-year {
+        width: auto;
+        text-align: left;
+        font-size: 0.9rem;
+        padding: 0 0 4px 0;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+    .timeline-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.85rem;
+    }
+
+    /* --- Mobile Products --- */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-card {
+        padding: 20px 16px;
+    }
+
+    .product-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .product-card p {
+        font-size: 0.8rem;
+    }
+
+    .product-category {
+        margin-bottom: 40px;
+    }
+
+    .product-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .product-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .product-category-header h3 {
+        font-size: 1.1rem;
+    }
+
+    /* --- Mobile Innovation --- */
+    .innovation-image img {
+        height: 260px;
+    }
+
+    .innovation-lead {
+        font-size: 1rem;
+    }
+
+    /* --- Mobile Services --- */
+    .services-image-wrapper {
+        margin-bottom: 32px;
+    }
+
+    .services-hero-image {
+        height: 200px;
+        border-radius: var(--radius);
     }
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .product-grid {
-        grid-template-columns: 1fr;
+    .service-card {
+        padding: 28px 24px;
     }
 
-    .env-grid {
-        grid-template-columns: 1fr;
+    .service-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 16px;
     }
 
-    .timeline::before {
-        left: 20px;
+    .service-icon svg {
+        width: 28px;
+        height: 28px;
     }
 
-    .timeline-year {
-        width: 20px;
-        font-size: 0;
+    /* --- Mobile Quality --- */
+    .quality-image img {
+        height: 260px;
     }
 
-    .timeline-year::after {
-        content: attr(data-year);
+    .quality-lead {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .quality-list li {
         font-size: 0.9rem;
+        padding: 8px 0;
     }
 
-    .timeline-item {
-        gap: 24px;
+    .cert-badges {
+        flex-direction: row;
+        gap: 12px;
     }
 
+    .cert-badge {
+        flex: 1;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .cert-name {
+        font-size: 0.85rem;
+    }
+
+    /* --- Mobile Environment --- */
+    .env-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .env-card {
+        padding: 24px 18px;
+    }
+
+    .env-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 14px;
+    }
+
+    .env-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .env-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .env-card p {
+        font-size: 0.8rem;
+    }
+
+    /* --- Mobile Contact --- */
     .contact-form {
         grid-template-columns: 1fr;
     }
@@ -1349,39 +1588,70 @@ img {
         padding: 24px;
     }
 
+    .person-photo {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* --- Mobile Footer --- */
+    .footer {
+        padding: 48px 0 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-links h4 {
+        font-size: 0.8rem;
+        margin-bottom: 14px;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    /* --- Section headers mobile --- */
+    .section-title {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .env-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        gap: 16px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .hero-content {
-        padding: 120px 0 80px;
-    }
-
-    .hero-title {
-        font-size: clamp(2.5rem, 10vw, 4rem);
-    }
-
-    .hero-scroll {
-        display: none;
     }
 
     .cert-badges {
         flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .hero-buttons .btn {
-        text-align: center;
-        justify-content: center;
-    }
-
-    .stat-number {
-        font-size: 2.2rem;
     }
 }
