@@ -5,6 +5,11 @@
   "use strict";
 
   const cfg = window.KPT_CONFIG;
+  if (!window.supabase || typeof window.supabase.createClient !== "function") {
+    document.getElementById("splash").innerHTML =
+      '<div class="empty"><span class="emoji">⚠️</span>Die App-Bibliothek konnte nicht geladen werden.<br/>Bitte Internetverbindung prüfen und neu laden.</div>';
+    return;
+  }
   const sb = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY);
   const BUCKET = cfg.STORAGE_BUCKET;
 
