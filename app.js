@@ -95,7 +95,8 @@
 
   // ---------- Data layer ----------
   async function loadMembers() {
-    const { data } = await sb.from("members").select("*").order("name");
+    const { data, error } = await sb.from("members").select("*").order("name");
+    if (error) throw new Error("Datenbank nicht erreichbar (" + (error.message || error.code || "?") + ")");
     state.members = data || [];
     return state.members;
   }
