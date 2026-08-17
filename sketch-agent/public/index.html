@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch-Agent — Live-Sketchnotes aus Sprache</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9C%8F%EF%B8%8F</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✏️ Sketch-Agent</h1>
+    <div class="controls">
+      <span id="status" class="status">Lade…</span>
+      <button id="start-btn" class="btn primary">🎙 Start</button>
+      <button id="clear-btn" class="btn">Leeren</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <section class="panel transcript-panel">
+        <h2>Live-Transkript</h2>
+        <div class="panel-body transcript-scroll">
+          <span id="transcript"></span>
+          <span id="interim" class="interim"></span>
+        </div>
+      </section>
+
+      <section class="panel log-panel">
+        <h2>Agent-Entscheidungen</h2>
+        <div class="panel-body" id="agent-log"></div>
+      </section>
+    </aside>
+
+    <section class="canvas-panel">
+      <svg id="sketch-svg" preserveAspectRatio="xMidYMid meet"></svg>
+    </section>
+  </main>
+
+  <script src="icons.js"></script>
+  <script src="canvas.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
