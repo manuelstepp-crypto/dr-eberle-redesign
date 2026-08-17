@@ -24,14 +24,23 @@ Beide API-Keys bleiben auf dem Server — der Browser spricht nur mit dem eigene
 
 Voraussetzungen: Node.js ≥ 18, ein [Deepgram-Key](https://console.deepgram.com/) (Startguthaben reicht für viele Teststunden) und ein [Anthropic-Key](https://platform.claude.com/).
 
+**Einfachster Weg** — das Skript prüft Node, installiert alles, fragt nach den Keys und startet:
+
+```bash
+cd sketch-agent
+./start.sh
+```
+
+Der Browser öffnet sich von selbst. Dann **Start** drücken, Mikrofonzugriff erlauben, sprechen.
+
+**Manuell**, wenn du die Schritte selbst kontrollieren willst:
+
 ```bash
 cd sketch-agent
 npm install
 cp .env.example .env    # Keys eintragen
-npm start
+npm start               # → http://localhost:3000
 ```
-
-Dann http://localhost:3000 öffnen, **Start** drücken, Mikrofonzugriff erlauben, sprechen.
 
 > **Mikrofon & HTTPS:** Browser geben `getUserMedia` nur auf `localhost` oder über HTTPS frei. Lokal funktioniert es direkt; auf einem Server (z. B. Hetzner) brauchst du einen Reverse-Proxy mit TLS (siehe unten).
 
